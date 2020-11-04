@@ -15,3 +15,31 @@
  */
 
 @import 'bulma';
+
+.navbar-brand .title {
+  color: white;
+}
+
+.custom-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
