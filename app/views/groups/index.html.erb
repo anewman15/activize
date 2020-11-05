@@ -1,1 +1,6 @@
 <%= render 'groups/form'%>
+<% @groups.each do |group| %>
+  <p><%= link_to group.name, group_path(group) %> </p>
+  <p><%= group.icon%> </p>
+  <hr>
+<% end %>

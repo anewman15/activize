@@ -4,5 +4,5 @@ class Activity < ApplicationRecord
   validates :author_id, presence: true
 
   belongs_to :author, class_name: 'User'
-  belongs_to :group
+  belongs_to :group, optional: true
 end

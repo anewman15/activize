@@ -11,10 +11,15 @@ before_action :authenticate_user!
   end
 
   def create
-    @activity = current_user.activities.build()
+    @activity = current_user.activities.build(activity_params)
+    @activity.save
   end
 
   def show
 
+  end
+
+  def activity_params
+    params.require(:activity).permit(:name, :amount, :group.id)
   end
 end

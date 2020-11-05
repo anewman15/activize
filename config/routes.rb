@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :activities, except: [ :edit, :update, :destroy ]
   end
 
-  resources :groups, only: [ :new, :create, :index ]
-  
+  resources :groups, only: [ :new, :create, :index, :show ]
+
   devise_scope :user do
     root 'users/sessions#new'
   end
