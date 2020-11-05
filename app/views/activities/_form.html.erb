@@ -1,0 +1,30 @@
+<h2 class="title is-3">Create an Activity</h2>
+<%= simple_form_for(@activity, url: new_user_activity_path) do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+    <div class="control">
+      <%= f.input :name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "name", class: "input" },
+                  wrapper: false,
+                  label_html: { class: "label"} %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <%= f.input :group,
+                  collection: @groups,
+                  prompt: "Select Group",
+                  input_html: { autocomplete: "current-password", class: "input" },
+                  wrapper: false,
+                  label_html: { class: "label"} %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, "Log Activity", class: "button is-primary" %>
+    </div>
+  </div>
+<% end %>
+<br>
