@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     root 'users/sessions#new'
   end
 
+  get "/profile", to: 'users#show'
   get "*path", to: redirect('/')
 end
