@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :password_confirmation, presence: true
 
+  has_many :groups
   has_many :activities, foreign_key: 'author_id'
   has_many :ungrouped_activities, -> { where group: false }, class_name: 'Activity', foreign_key: 'author_id'
 end

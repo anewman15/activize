@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   resources :users, except: [:edit, :update, :destroy] do
     resources :activities, except: [ :edit, :update, :destroy ]
-    resources :groups, only: [ :new, :create, :index ]
   end
 
+  resources :groups, only: [ :new, :create, :index ]
+  
   devise_scope :user do
     root 'users/sessions#new'
   end
