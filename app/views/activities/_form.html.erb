@@ -3,9 +3,10 @@
   <div class="field">
     <div class="control">
       <%= f.input :name,
+                  label: 'Activity Title',
                   required: true,
                   autofocus: true,
-                  placeholder: 'Give your activity a short Title',
+                  placeholder: 'Give your activity a short, descriptive Title',
                   input_html: { autocomplete: "name", class: "input" },
                   wrapper: false,
                   label_html: { class: "label"} %>
@@ -19,7 +20,7 @@
                   wrapper: false,
                   label_html: { class: "label"} %>
     </div>
-
+    <br>
   </div>
   <div class="field">
     <div class="control">
@@ -33,7 +34,7 @@
   </div>
   <div class="field">
     <div class="control">
-      <%= f.button :submit, "Log an Activity", class: "button is-primary" %>
+      <%= f.button :submit, "Log new Activity", class: "button is-primary" %>
     </div>
   </div>
 <% end %>
