@@ -13,4 +13,9 @@ class GroupsController < ApplicationController
     @group = Group.new
     @groups = Group.all
   end
+
+  def show
+    @group = Group.find(params[:id])
+    @group_activities = @group.activities
+  end
 end
