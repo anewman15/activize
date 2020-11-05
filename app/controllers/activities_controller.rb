@@ -13,4 +13,8 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.activities.build()
   end
+
+  def show
+  
+  end
 end

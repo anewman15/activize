@@ -1,5 +1,5 @@
 <h2 class="title is-3">Create an Activity</h2>
-<%= simple_form_for(@activity, url: new_user_activity_path) do |f| %>
+<%= simple_form_for(@activity, url: user_activities_path(current_user)) do |f| %>
   <%= f.error_notification %>
   <div class="field">
     <div class="control">

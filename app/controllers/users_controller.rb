@@ -5,4 +5,10 @@ class UsersController < ApplicationController
 
   end
 
+  def index
+    @activity = Activity.new
+    @ungrouped_activities = current_user.ungrouped_activities
+    @groups = Group.all
+  end
+
 end
