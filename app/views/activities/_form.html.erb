@@ -24,7 +24,8 @@
   </div>
   <div class="field">
     <div class="control">
-      <%= f.input :group,
+      <%= f.input :group_id,
+                  label: 'Group',
                   collection: @groups,
                   prompt: "Select Group",
                   input_html: { autocomplete: "current-password", class: "input" },

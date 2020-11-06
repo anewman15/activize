@@ -5,4 +5,6 @@ class Activity < ApplicationRecord
 
   belongs_to :author, class_name: 'User'
   belongs_to :group, optional: true
+
+  scope :latest_first, -> { order(created_at: :desc) }
 end

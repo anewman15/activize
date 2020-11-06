@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @group_activities = @group.activities
+    @group_activities = @group.activities.latest_first
   end
 
   def group_params

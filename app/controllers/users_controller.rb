@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def index
     @activity = Activity.new
-    @ungrouped_activities = current_user.ungrouped_activities
+    @ungrouped_activities = current_user.ungrouped_activities.latest_first
     @groups = Group.all
   end
 
