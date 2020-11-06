@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
 before_action :authenticate_user!
+
   def index
     @activity = Activity.new
     @activities = current_user.activities.latest_first

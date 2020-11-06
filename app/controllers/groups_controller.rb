@@ -5,7 +5,12 @@ class GroupsController < ApplicationController
     # byebug
     @group = Group.new(group_params)
     @group.save
-    redirect_to groups_path
+
+    if @group.save
+      redirect_to groups_path, notice: "New group created successfully!"
+    else
+      rredirect_to groups_path, alert: "Something's wrong. Group not created :("
+    end
   end
 
   def index
