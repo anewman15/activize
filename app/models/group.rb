@@ -3,6 +3,6 @@ class Group < ApplicationRecord
   validates :icon, presence: true
 
   # belongs_to :user
-  # has_one_attached :icon
+  has_one_attached :icon
   has_many :activities
 end

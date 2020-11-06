@@ -3,7 +3,7 @@
     <%= link_to current_user, class: "navbar-item" do %>
       <h1 class="title is-5">Activize</h1>
     <% end %>
-    <%= link_to current_user.name, user_path(current_user), class: "has-text-white has-text-weight-bold" %>
+    <%= link_to current_user.name, current_user, class: "has-text-white has-text-weight-bold" %>
 
     <div class="navbar-burger burger" data-target="navbarExample">
       <span></span>
