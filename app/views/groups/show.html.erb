@@ -1,7 +1,29 @@
 <h2 class="title is-3"><%= "All #{@group.name} Activities" %></h2>
 <% @group_activities.each do |activity| %>
-  <p><%= activity.name %> </p>
-  <p><%= "#{activity.amount} minutes" %> </p>
-  <p><%= "#{activity.created_at}" %> </p>
-  <hr>
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <% if activity.group.present? %>
+            <img src="<%= url_for(activity.group.icon) %>" alt="activity_group_icon">
+          <% else %>
+            <img src="https://bulma.io/images/placeholders/128x128.png">
+          <% end %>
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <div>
+            <strong><%= activity.name %></strong>
+            <span><%= "#{activity.amount} minutes" %></span>
+            <br>
+          </div>
+          <div>
+            <strong><%= "#{activity.created_at}" %></strong>
+            <br>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
 <% end %>
