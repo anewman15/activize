@@ -1,12 +1,11 @@
 class GroupsController < ApplicationController
-# before_action :authenticate_user!
-
-  def new
-    @group = Group.new
-  end
+  before_action :authenticate_user!
 
   def create
-    @group = Group.new(params[:name, :icon])
+    # byebug
+    @group = Group.new(group_params)
+    @group.save
+    redirect_to groups_path
   end
 
   def index
@@ -17,5 +16,9 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @group_activities = @group.activities
+  end
+
+  def group_params
+    params.require(:group).permit(:name, :icon)
   end
 end
