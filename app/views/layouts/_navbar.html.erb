@@ -1,9 +1,7 @@
 <nav class="navbar is-fixed-top is-primary">
   <div class="navbar-brand custom-centered ml-3">
-    <%= link_to current_user, class: "navbar-item" do %>
-      <h1 class="title is-5">Activize</h1>
-    <% end %>
-    <%= link_to current_user.name, current_user, class: "has-text-white has-text-weight-bold" %>
+      <%= link_to_home_page %>
+      <%= link_to_current_user_name %>
 
     <div class="navbar-burger burger" data-target="navbarExample">
       <span></span>
@@ -15,7 +13,7 @@
     <div class="navbar-end mr-3">
       <div class="field is-grouped custom-centered">
         <p class="control">
-          <%= link_to  "Create an Activity", user_activities_path(current_user), class: "button is-danger is-info has-text-centered" %>
+          <%= link_to_create_activity %>
         </p>
         <%= render 'layouts/login_logout_buttons' %>
       </div>
