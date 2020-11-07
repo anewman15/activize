@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to user_groups_path, notice: "New group created successfully!"
     else
-      rredirect_to user_groups_path, alert: "Something's wrong. Group not created :("
+      redirect_to user_groups_path, alert: "Something's wrong. Group not created :("
     end
   end
 
