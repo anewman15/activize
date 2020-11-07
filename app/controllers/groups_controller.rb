@@ -3,23 +3,23 @@ class GroupsController < ApplicationController
 
   def create
     # byebug
-    @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
     @group.save
 
     if @group.save
-      redirect_to groups_path, notice: "New group created successfully!"
+      redirect_to user_groups_path, notice: "New group created successfully!"
     else
-      rredirect_to groups_path, alert: "Something's wrong. Group not created :("
+      rredirect_to user_groups_path, alert: "Something's wrong. Group not created :("
     end
   end
 
   def index
     @group = Group.new
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = current_user.find_group(params)
     @group_activities = @group.activities.latest_first
   end
 
