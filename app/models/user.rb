@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_many :ungrouped_activities, -> { where group_id: nil }, class_name: 'Activity', foreign_key: 'author_id'
 
   def find_group(params)
-    groups.find { |group| group.id == params[:id] }
+    groups.find { |group| group if group.id == params[:id].to_i }
   end
 end

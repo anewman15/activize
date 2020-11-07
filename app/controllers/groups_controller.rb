@@ -19,6 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    # byebug
     @group = current_user.find_group(params)
     @group_activities = @group.activities.latest_first
   end
