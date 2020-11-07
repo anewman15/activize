@@ -4,7 +4,7 @@ before_action :authenticate_user!
   def index
     @activity = Activity.new
     @activities = current_user.activities.latest_first
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   def new
