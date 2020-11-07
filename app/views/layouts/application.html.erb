@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/774f0ae2db.js" crossorigin="anonymous"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -16,11 +17,7 @@
       <%= render 'layouts/flash_notice'%>
       <div class="section">
         <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-half">
             <%= yield %>
-            </div>
-          </div>
         </div>
       </div>
     </div>
