@@ -21,10 +21,16 @@ class GroupsController < ApplicationController
   def show
     # byebug
     @group = current_user.find_group(params)
-    @group_activities = @group.activities.latest_first
+    group_activities
   end
 
   def group_params
     params.require(:group).permit(:name, :icon)
+  end
+
+  private
+
+  def group_activities
+    @group_activities = @group.activities.latest_first
   end
 end
