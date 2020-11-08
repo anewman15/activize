@@ -1,8 +1,11 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @group = Group.new
+  end
+
   def create
-    # byebug
     @group = current_user.groups.build(group_params)
     @group.save
 
@@ -19,7 +22,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    # byebug
     @group = current_user.find_group(params)
     group_activities
   end

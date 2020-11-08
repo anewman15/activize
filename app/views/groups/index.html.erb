@@ -1,4 +1,4 @@
-<%= render 'groups/form'%>
+
 <% @groups.each do |group| %>
   <p><%= link_to group.name, user_group_path(current_user, group) %> </p>
   <% if group.icon.attached? %>
@@ -6,3 +6,4 @@
   <% end %>
   <hr>
 <% end %>
+<%= create_group_button(current_user) %>
