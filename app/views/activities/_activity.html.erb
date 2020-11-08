@@ -1,26 +1,27 @@
 <div class="columns is-centered">
   <div class="column is-two-thirds-desktop">
-    <div class="box">
-      <article class="media">
-        <div class="media-left">
+    <div class="tile-wrapper">
+      <div class="tile">
+        <div class="tile-left">
           <figure class="image is-128x128">
-            <img src="<%= activity_image_src(activity) %>" alt="activity_group_icon">
+            <img class="tile-img" src="<%= activity_image_src(activity) %>" alt="activity_group_icon">
           </figure>
         </div>
-        <div class="media-content">
-          <div class="content">
-            <div>
-              <strong><%= activity.name %></strong>
-              <span><%= "#{activity.amount} minutes" %></span>
-              <br>
+        <div class="tile-right">
+          <div class="tile-top">
+            <div class="tile-activity-name">
+              <%= activity.name %>
             </div>
-            <div>
-              <strong><%= "#{activity.created_at}" %></strong>
-              <br>
+            <div class="tile-activity-time">
+              <%= "#{activity.amount} minutes" %>
             </div>
           </div>
+          <div class="tile-bottom">
+              <%= "#{activity.created_at}" %>
+          </div>
         </div>
-      </article>
+      </div>
     </div>
+    <br>
   </div>
 </div>
