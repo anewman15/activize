@@ -47,3 +47,8 @@
 .notification:not(:last-child) {
   margin-bottom: 0;
 }
+
+.navbar-center {
+  flex-grow: 1;
+  justify-content: center;
+}

@@ -22,20 +22,6 @@ module ApplicationHelper
     end
   end
 
-  def link_to_current_user_name
-    return unless user_signed_in?
-
-    link_to current_user.name, current_user,
-      class: "has-text-white has-text-weight-bold"
-  end
-
-  def link_to_create_activity
-    return unless user_signed_in?
-
-    link_to  "Create an Activity", user_activities_path(current_user),
-      class: "button is-danger is-info has-text-centered"
-  end
-
   def remember_me_checkbox(form)
     form.input :remember_me, as: :boolean if devise_mapping.rememberable?
   end
