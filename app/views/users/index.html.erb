@@ -1,5 +1,5 @@
-<%= render 'activities/form' %>
 <div class="has-text-centered mb-6">
   <h2 class="title is-3">Your Ungrouped Activities</h2>
 </div>
 <%= render @ungrouped_activities %>
+<%= create_activity_button(current_user) %>

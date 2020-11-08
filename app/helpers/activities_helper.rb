@@ -7,4 +7,17 @@ module ActivitiesHelper
     end
   end
 
+  def create_activity_button(current_user)
+    content_tag :nav, class: "navbar is-fixed-bottom" do
+      content_tag :div, class: "columns is-centered" do
+        content_tag :div, class: "column" do
+          content_tag :div, class: "box has-text-centered has-background-success" do
+            link_to  "Create a New Activity", new_user_activity_path(current_user),
+              class: "button is-fullwidth is-success is-inverted is-outlined"
+          end
+        end
+      end
+    end
+  end
+
 end
