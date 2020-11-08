@@ -3,7 +3,7 @@ before_action :authenticate_user!
 
   def index
     @activity = Activity.new
-    @activities = current_user.activities.latest_first
+    activities
     @groups = current_user.groups
   end
 
@@ -26,8 +26,14 @@ before_action :authenticate_user!
 
   end
 
+  private
+
   def activity_params
     # byebug
     params.require(:activity).permit(:name, :amount, :group_id)
+  end
+
+  def activities
+    @activities = current_user.activities.latest_first
   end
 end
