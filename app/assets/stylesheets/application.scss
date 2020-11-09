@@ -14,11 +14,11 @@
  *= require_self
  */
 
-  $family-primary:  "Proxima Nova Rg", "sans-serif" !important;
-  $primary: #3778c2;
-  $success: #5fb523;
+$family-primary:  "Proxima Nova Rg", "sans-serif" !important;
+$primary: #3778c2;
+$success: #5fb523;
 
-  $box-radius: 0;
+$box-radius: 0;
 
 @import 'bulma';
 
