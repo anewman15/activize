@@ -13,4 +13,14 @@ class User < ApplicationRecord
   def find_group(params)
     groups.find { |group| group if group.id == params[:id].to_i }
   end
+
+  def activities_duration_total
+    amount_array = activities.map { |activity| activity.amount.to_i }
+    amount_array.sum
+  end
+
+  def ungrouped_activities_duration_total
+    amount_array = ungrouped_activities.map { |activity| activity.amount.to_i }
+    amount_array.sum
+  end
 end

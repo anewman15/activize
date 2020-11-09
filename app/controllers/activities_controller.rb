@@ -19,6 +19,7 @@ class ActivitiesController < ApplicationController
   def index
     @activity = Activity.new
     activities
+    @activities_duration_total = current_user.activities_duration_total
     @groups = current_user.groups
   end
 

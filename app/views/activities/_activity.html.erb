@@ -1,27 +1,43 @@
 <div class="columns is-centered">
   <div class="column is-two-thirds-desktop">
-    <div class="tile-wrapper">
+    <div class="tile-wrapper has-background-white">
       <div class="tile">
-        <div class="tile-left">
-          <figure class="image is-128x128">
-            <img class="tile-img" src="<%= activity_image_src(activity) %>" alt="activity_group_icon">
-          </figure>
-        </div>
-        <div class="tile-right">
-          <div class="tile-top">
-            <div class="tile-activity-name">
-              <%= activity.name %>
-            </div>
-            <div class="tile-activity-time">
-              <%= "#{activity.amount} minutes" %>
-            </div>
+        <div class="tile-top">
+          <div class="tile-activity-name">
+            <strong>Total Duration</strong>
           </div>
-          <div class="tile-bottom">
-              <%= "#{activity.created_at}" %>
+          <div class="tile-activity-time">
+            <%= duration_hours(@activities_duration_total) %><strong>h</strong>
+            <%= duration_mins(@activities_duration_total) %><strong>min</strong>
           </div>
         </div>
       </div>
     </div>
-    <br>
+  </div>
+</div>
+
+<div class="columns is-centered">
+  <div class="column is-two-thirds-desktop">
+    <div class="tile-wrapper has-background-white">
+      <div class="tile">
+        <div class="tile-left">
+            <img class="tile-img" src="<%= activity_image_src(activity) %>" alt="activity_group_icon">
+        </div>
+        <div class="tile-right">
+          <div class="tile-top">
+            <div class="tile-activity-name">
+              <strong><%= activity.name %></strong>
+            </div>
+            <div class="tile-activity-time">
+              <%= duration_hours(activity.amount) %><strong>h</strong>
+              <%= duration_mins(activity.amount) %><strong>min</strong>
+            </div>
+          </div>
+          <div class="tile-bottom">
+              <%= "#{activity.created_at.to_date.strftime("%B %d, %Y")}" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

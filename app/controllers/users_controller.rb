@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def index
     @activity = Activity.new
     ungrouped_activities
+    @activities_duration_total = current_user.ungrouped_activities_duration_total
     @groups = current_user.groups
   end
 

@@ -55,6 +55,8 @@
 
 .tile {
   width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 0.01rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,7 +65,8 @@
 .tile-left {
   width: auto;
   height: auto;
-  margin-right: 5rem;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
 }
 
 .tile-img {
@@ -80,6 +83,7 @@
 }
 
 .tile-top {
+  padding: 0.5rem 0;
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -88,6 +92,7 @@
 
 .tile-activity-name {
   flex-grow: 1;
+  margin-right: 1rem;
 }
 
 .tile-activity-time {
@@ -95,6 +100,7 @@
 }
 
 .tile-bottom {
+  padding: 0.5rem 0;
   width: auto;
   height: auto;
 }

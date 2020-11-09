@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
   def show
     @group = current_user.find_group(params)
     group_activities
+    @activities_duration_total = @group.activities_duration_total
   end
 
   def group_params
