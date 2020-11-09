@@ -1,23 +1,26 @@
-<nav class="navbar is-fixed-top is-primary">
-  <div class="navbar-brand custom-centered ml-3">
-    <%= link_to current_user, class: "navbar-item" do %>
-      <h1 class="title is-5">Activize</h1>
-    <% end %>
-    <span class="has-text-white has-text-weight-semibold ml-3"><%= welcome_current_user(current_user) %></span>
+<nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand ml-4">
+    <%= link_to_home_page %>
 
-    <div class="navbar-burger burger" data-target="navbarExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <a role="button" class="navbar-burger burger is-align-content-baseline" aria-label="menu" aria-expanded="false" data-target="activizeNavbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
-  <div id="navbarExample" class="navbar-menu">
-    <div class="navbar-end mr-3">
-      <div class="field is-grouped custom-centered">
-        <p class="control">
-          <%= link_to  "Create an Event", current_user, class: "button is-danger is-info has-text-centered" %>
-        </p>
-        <%= render 'layouts/login_logout_buttons' %>
+
+  <div id="activizeNavbar" class="navbar-menu is-align-content-baseline">
+    <div class="navbar-start navbar-center">
+      <div class="navbar-item">
+        <h2 class="title is-4 has-text-white"><%= current_user_name %></h2>
+      </div>
+    </div>
+
+    <div class="navbar-end mr-4">
+      <div class="navbar-item">
+        <%= login_button %>
+        <%= logout_button %>
+        <%= sign_up_button %>
       </div>
     </div>
   </div>

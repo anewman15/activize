@@ -1,0 +1,8 @@
+<div class="group-tile has-text-centered">
+  <div class="">
+    <img class="group-tile-img is-centered" src="<%= group_img_url(group) %>" alt="group-image">
+  </div>
+  <div class="">
+    <p class="title is-5 has-text-centered"><%= link_to group.name, user_group_path(current_user, group), class: 'custom-link' %></p>
+  </div>
+</div>
