@@ -13,10 +13,10 @@
  *= require_tree .
  *= require_self
  */
- $primary: #3778c2;
- $success: #5fb523;
+  $primary: #3778c2;
+  $success: #5fb523;
 
- $box-radius: 0;
+  $box-radius: 0;
 
 @import 'bulma';
 
@@ -100,7 +100,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .tile-top {

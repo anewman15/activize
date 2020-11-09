@@ -9,11 +9,10 @@ class ActivitiesController < ApplicationController
     @activity = current_user.activities.build(activity_params)
 
     if @activity.save
-      redirect_to user_activities_path, notice: "New activity created successfully!"
+      redirect_to user_activities_path, notice: 'New activity created successfully!'
     else
       redirect_to user_activities_path, alert: "Something's wrong. Activity not created :("
     end
-
   end
 
   def index
@@ -23,9 +22,7 @@ class ActivitiesController < ApplicationController
     @groups = current_user.groups
   end
 
-  def show
-
-  end
+  def show; end
 
   private
 
