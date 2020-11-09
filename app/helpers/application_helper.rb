@@ -1,9 +1,9 @@
 module ApplicationHelper
 
   def home_page_links(current_user)
-    link1 = link_to  "All Activities", user_activities_path(current_user)
-    link2 = link_to  "Ungrouped Activities", users_path
-    link3 = link_to  "Activity Groups", user_groups_path(current_user)
+    link1 = link_to  "All Activities", user_activities_path(current_user), class: 'custom-link'
+    link2 = link_to  "Ungrouped Activities", users_path, class: 'custom-link'
+    link3 = link_to  "Activity Groups", user_groups_path(current_user), class: 'custom-link'
 
     [ link1, link2, link3 ]
   end

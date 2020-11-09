@@ -53,6 +53,22 @@
   justify-content: center;
 }
 
+.custom-link {
+  color: white;
+}
+
+.links-wrapper {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.links-left {
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+
 .tile {
   width: 100%;
   padding: 1.5rem;

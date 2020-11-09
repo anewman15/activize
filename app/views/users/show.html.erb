@@ -1,18 +1,14 @@
 <div class="columns is-centered">
   <div class="column is-three-quarters-tablet is-half-desktop">
     <% home_page_links(current_user).each do |link| %>
-    <article class="media">
-      <figure class="media-left">
-        <div class="image is-1284x1284">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </div>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <h2 class="title is-3"><%= link %></h2>
-        </div>
+    <div class="links-wrapper">
+      <div class="links-left">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
       </div>
-    </article>
+      <div class="links-right">
+        <h2 class="title is-3 has-text-white"><%= link %></h2>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>
