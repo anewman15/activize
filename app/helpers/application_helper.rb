@@ -5,7 +5,7 @@ module ApplicationHelper
     link2 = link_to  "Ungrouped Activities", users_path, class: 'custom-link'
     link3 = link_to  "Activity Groups", user_groups_path(current_user), class: 'custom-link'
 
-    [ link1, link2, link3 ]
+    [ [link1, "fa-tasks"], [link2, "fa-ban"], [link3, "fa-object-group"] ]
   end
 
   def link_to_home_page

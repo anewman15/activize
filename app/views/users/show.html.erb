@@ -1,14 +1,15 @@
-<div class="columns is-centered">
+<div class="columns is-centered mb-6">
   <div class="column is-three-quarters-tablet is-half-desktop">
     <% home_page_links(current_user).each do |link| %>
     <div class="links-wrapper">
       <div class="links-left">
-        <img src="https://bulma.io/images/placeholders/128x128.png">
+        <i class='fas <%= "#{link[1]}" %> has-text-grey-light custom-icon is-text-centered'></i>
       </div>
       <div class="links-right">
-        <h2 class="title is-3 has-text-white"><%= link %></h2>
+        <h2 class="title is-3 has-text-white"><%= link[0] %></h2>
       </div>
     </div>
+    <hr>
     <% end %>
   </div>
 </div>
