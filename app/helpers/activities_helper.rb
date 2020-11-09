@@ -15,10 +15,6 @@ module ActivitiesHelper
     duration.to_i % 60
   end
 
-  def activity_duration
-    activity.amount
-  end
-
   def create_activity_button(current_user)
     content_tag :nav, class: "navbar is-fixed-bottom" do
       content_tag :div, class: "columns is-centered" do

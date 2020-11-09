@@ -2,24 +2,6 @@
   <div class="column is-two-thirds-desktop">
     <div class="tile-wrapper has-background-white">
       <div class="tile">
-        <div class="tile-top">
-          <div class="tile-activity-name">
-            <strong>Total Duration</strong>
-          </div>
-          <div class="tile-activity-time">
-            <%= duration_hours(@activities_duration_total) %><strong>h</strong>
-            <%= duration_mins(@activities_duration_total) %><strong>min</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="columns is-centered">
-  <div class="column is-two-thirds-desktop">
-    <div class="tile-wrapper has-background-white">
-      <div class="tile">
         <div class="tile-left">
             <img class="tile-img" src="<%= activity_image_src(activity) %>" alt="activity_group_icon">
         </div>
