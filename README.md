@@ -1,5 +1,5 @@
 # Activize
-
+This is an activity logger app that helps a user create daily activities and categorize them according to various categories they have in mind. They are able to name and create those groups according to their convenience.
 
 
 ## App Screenshot
@@ -21,7 +21,42 @@
 ## Database ERD
 ![Entity Relational Diagram](./erd.png)
 
+## Live Version
+Live on Heroku [here](https://murmuring-wave-07875.herokuapp.com/)
+
 ## Deployment
+
+### Getting Started
+
+Navigate to a directory of your choice and get a local copy. `cd` into your cloned folder.
+
+### Setup
+
+Install gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+### Usage
+
+Start server with:
+
+```
+    rails server
+```
+
+1. Open `http://localhost:3000/` in your browser
+2. Sign up for an account and login
+3. Create activities and groups
+4. Play around and you'll see all your activities and groups listed
 
 ## Author
 👤 **Abdullah Numan**
