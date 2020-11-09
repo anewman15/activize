@@ -5,14 +5,16 @@
         <div class="tile-left">
             <img class="tile-img" src="<%= activity_image_src(activity) %>" alt="activity_group_icon">
         </div>
-        <div class="tile-right">
+        <div class="tile-right has-background-white-bis">
           <div class="tile-top">
             <div class="tile-activity-name">
               <strong><%= activity.name %></strong>
             </div>
             <div class="tile-activity-time">
-              <%= duration_hours(activity.amount) %><strong>h</strong>
-              <%= duration_mins(activity.amount) %><strong>min</strong>
+              <p>
+                <%= duration_hours(activity.amount) %><strong>h </strong>
+                <%= duration_mins(activity.amount) %><strong>min</strong>
+              </p>
             </div>
           </div>
           <div class="tile-bottom">

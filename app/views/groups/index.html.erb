@@ -1,9 +1,8 @@
-
-<% @groups.each do |group| %>
-  <p><%= link_to group.name, user_group_path(current_user, group) %> </p>
-  <% if group.icon.attached? %>
-    <img src="<%= url_for(group.icon) %>">
-  <% end %>
-  <hr>
-<% end %>
+<div class="columns is-centered">
+  <div class="column is-centered">
+    <div class="group-tile-wrapper">
+      <%= render @groups %>
+    </div>
+  </div>
+</div>
 <%= create_group_button(current_user) %>

@@ -1,4 +1,8 @@
 module GroupsHelper
+  def group_img_url(group)
+    url_for(group.icon) if group.icon.attached?
+  end
+
   def create_group_button(current_user)
     content_tag :nav, class: "navbar is-fixed-bottom" do
       content_tag :div, class: "columns is-centered" do
