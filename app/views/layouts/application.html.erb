@@ -5,11 +5,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="//db.onlinewebfonts.com/c/0cc6b996ab9ff827e4749d58e6b98cc8?family=Proxima+Nova+Rg" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/774f0ae2db.js" crossorigin="anonymous"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="has-navbar-fixed-top has-background-primary">
+    <div class="container is-fluid">
+      <%= render 'layouts/navbar'%>
+      <%= render 'layouts/flash_notice'%>
+      <div class="section">
+        <div class="container">
+            <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+

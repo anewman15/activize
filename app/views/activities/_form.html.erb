@@ -1,0 +1,44 @@
+<%= simple_form_for(@activity, url: user_activities_path(current_user)) do |f| %>
+  <%= f.error_notification %>
+  <div class="field">
+    <div class="control">
+      <%= f.input :name,
+                  label: 'Activity Title',
+                  required: true,
+                  autofocus: true,
+                  placeholder: 'Give your activity a short, descriptive Title',
+                  input_html: { autocomplete: "name", class: "input" },
+                  wrapper: false,
+                  label_html: { class: "label"} %>
+    </div>
+  </div>
+  <br>
+  <div class="field">
+    <div class="control">
+      <%= f.input :amount, as: :integer,
+                  label: 'Time in minutes',
+                  required: true,
+                  input_html: { class: "input", min: 10, step: 10 },
+                  wrapper: false,
+                  label_html: { class: "label"} %>
+    </div>
+  </div>
+  <br>
+  <div class="field">
+    <div class="control">
+      <%= f.input :group_id,
+                  label: 'Group',
+                  collection: @groups,
+                  prompt: "Select Group",
+                  input_html: { class: "input" },
+                  wrapper: false,
+                  label_html: { class: "label"} %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, "Create Activity", class: "button is-primary" %>
+    </div>
+  </div>
+<% end %>
+<br>

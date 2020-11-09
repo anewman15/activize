@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$family-primary:  "Proxima Nova Rg", "sans-serif" !important;
+$primary: #3778c2;
+$success: #5fb523;
+
+$box-radius: 0;
+
+@import 'bulma';
+
+.navbar-brand .title {
+  color: white;
+}
+
+.custom-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.navbar-center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.custom-link {
+  color: white;
+}
+
+.custom-icon {
+  font-size: 7rem;
+}
+
+.links-wrapper {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.links-left {
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+
+.tile {
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 0.01rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tile-left {
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tile-img {
+  width: 128px;
+  height: 128px;
+}
+
+.tile-right {
+  padding: 0.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile-top {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tile-activity-name {
+  flex-grow: 1;
+  margin-right: 2rem;
+}
+
+.tile-activity-time {
+  width: auto;
+}
+
+.tile-bottom {
+  width: auto;
+  height: auto;
+}
+
+.group-tile-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.group-tile {
+  margin: 2rem;
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.group-tile-img {
+  width: 256px;
+  height: 256px;
+}

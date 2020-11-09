@@ -1,0 +1,11 @@
+<div class="has-background-white-ter">
+  <div class="has-text-centered mb-6">
+    <h2 class="title is-3 pt-3">Your Ungrouped Activities</h2>
+  </div>
+  <%= render 'activities/total_hours' %>
+  <%= render @ungrouped_activities %>
+  <br>
+  <br>
+  <br>
+  <%= create_activity_button(current_user) %>
+</div>

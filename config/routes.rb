@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+
+  resources :users, except: [:edit, :update, :destroy] do
+    resources :activities, except: [ :edit, :update, :destroy ]
+    resources :groups, only: [ :new, :create, :index, :show ]
+  end
+
+  devise_scope :user do
+    root 'users/sessions#new'
+  end
+
+  get "/profile", to: 'users#show'
+  # get "*path", to: redirect('/')
 end

@@ -1,0 +1,27 @@
+<nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand ml-4">
+    <%= link_to_home_page %>
+
+    <a role="button" class="navbar-burger burger is-align-content-baseline" aria-label="menu" aria-expanded="false" data-target="activizeNavbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="activizeNavbar" class="navbar-menu is-align-content-baseline">
+    <div class="navbar-start navbar-center">
+      <div class="navbar-item">
+        <h2 class="title is-4 has-text-white"><%= current_user_name %></h2>
+      </div>
+    </div>
+
+    <div class="navbar-end mr-4">
+      <div class="navbar-item">
+        <%= login_button %>
+        <%= logout_button %>
+        <%= sign_up_button %>
+      </div>
+    </div>
+  </div>
+</nav>
