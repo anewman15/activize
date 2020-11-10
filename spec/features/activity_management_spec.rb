@@ -26,14 +26,14 @@ feature 'user activty management features', type: :feature do
     create_user
     click_on 'All Activities'
 
-    expect(page).to have_content("All Activities")
+    expect(page).to have_content('All Activities')
   end
 
   scenario 'showing the list of ungrouped activities created by the user' do
     create_user
     click_on 'Ungrouped Activities'
 
-    expect(page).to have_content("Your Ungrouped Activities")
+    expect(page).to have_content('Your Ungrouped Activities')
   end
 
   def create_activity

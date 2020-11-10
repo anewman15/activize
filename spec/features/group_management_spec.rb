@@ -26,7 +26,7 @@ feature 'user group management features', type: :feature do
     create_user
     click_on 'Activity Groups'
 
-    expect(page).to have_content("Create a New Group")
+    expect(page).to have_content('Create a New Group')
   end
 
   def create_group
