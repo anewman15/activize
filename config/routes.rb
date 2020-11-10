@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
 
   resources :users, except: [:edit, :update, :destroy] do
-    resources :activities, except: [ :edit, :update, :destroy ]
+    resources :activities, only: [ :new, :create, :index ]
     resources :groups, only: [ :new, :create, :index, :show ]
   end
 

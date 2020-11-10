@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe GroupsController, type: :controller do
+RSpec.describe ActivitiesController, type: :controller do
   describe 'when signed in' do
     context 'GET #new' do
-      it 'renders groups#new page' do
+      it 'renders activities#new page' do
         user = FactoryBot.create(:user)
         sign_in user
         get :new, params: { user_id: user.id }
@@ -14,7 +14,7 @@ RSpec.describe GroupsController, type: :controller do
     end
 
     context 'GET #index' do
-      it 'renders groups#index page' do
+      it 'renders activities#index page' do
         user = FactoryBot.create(:user)
         sign_in user
         get :index, params: { user_id: user.id }
@@ -26,11 +26,10 @@ RSpec.describe GroupsController, type: :controller do
 
     # context 'POST #create' do
     #   context 'with invalid params' do
-    #     it 'renders to groups#new page with errors' do
+    #     it 'renders activities#new page with errors' do
     #       user = FactoryBot.create(:user)
     #       sign_in user
-    #       file = fixture_file_upload(Rails.root.join('public', 'no_group.png'))
-    #       post :create, params: { user_id: user.id, name: "Some Test Name", icon: file }
+    #       post :create, params: { user_id: user.id, name: "Some Test Activity Name", amount: 8 }
 
     #       expect(response).to render_template('new')
     #       expect(response).to have_http_status(200)
@@ -38,15 +37,16 @@ RSpec.describe GroupsController, type: :controller do
     #   end
     # end
 
-    # context 'GET #index' do
-    #   it 'renders groups#index page' do
-    #     user = FactoryBot.create(:user)
-    #     sign_in user
-    #     group = FactoryBot.create(:group)
-    #     get :show, params: { user_id: user.id, group_id: group.id }
+    # context 'POST #create' do
+    #   context 'with valid params' do
+    #     it 'redirects to activities#index page' do
+    #       user = FactoryBot.create(:user)
+    #       sign_in user
+    #       post :create, params: { user_id: user.id, name: "Some Test Activity Name", amount: 20 }
 
-    #     expect(response).to render_template('show')
-    #     expect(response).to have_http_status(200)
+    #       expect(response).to redirects_to(user_activities_path(user))
+    #       expect(response).to have_http_status(302)
+    #     end
     #   end
     # end
   end

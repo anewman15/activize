@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to user_activities_path, notice: 'New activity created successfully!'
     else
-      redirect_to user_activities_path, alert: "Something's wrong. Activity not created :("
+      render 'new'
     end
   end
 
@@ -22,12 +22,9 @@ class ActivitiesController < ApplicationController
     @groups = current_user.groups
   end
 
-  def show; end
-
   private
 
   def activity_params
-    # byebug
     params.require(:activity).permit(:name, :amount, :group_id)
   end
 
