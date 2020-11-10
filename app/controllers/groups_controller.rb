@@ -9,9 +9,9 @@ class GroupsController < ApplicationController
     @group = current_user.groups.build(group_params)
 
     if @group.save
-      redirect_to user_groups_path, notice: 'New group created successfully!'
+      render user_groups_path, notice: 'New group created successfully!'
     else
-      redirect_to user_groups_path, alert: "Something's wrong. Group not created :("
+      render 'new'
     end
   end
 
