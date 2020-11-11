@@ -33,6 +33,26 @@ module ApplicationHelper
     end
   end
 
+  def flash_notice(notice)
+    return unless flash[:notice]
+
+    content_tag :div, class: 'notification is-success global-notification' do
+      content_tag :p, class: 'notice' do
+        notice
+      end
+    end
+  end
+
+  def flash_alert(alert)
+    return unless flash[:alert]
+
+    content_tag :div, class: 'notification is-warning global-notification' do
+      content_tag :p, class: 'alert' do
+        alert
+      end
+    end
+  end
+
   def remember_me_checkbox(form)
     form.input :remember_me, as: :boolean if devise_mapping.rememberable?
   end
