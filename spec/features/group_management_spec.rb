@@ -2,24 +2,33 @@ require 'rails_helper'
 
 feature 'user group management features', type: :feature do
   feature 'creating group' do
-    scenario 'failing with invalid params' do
+    scenario 'failing when group name is absent' do
+      create_user
+      click_on 'Activity Groups', match: :first
+      click_on 'Create a New Group'
+      fill_in 'group_name', with: ''
+      attach_file('group_icon', File.absolute_path('./public/no_group.png'))
+      click_on 'Create Group'
+
+      expect(page).to have_content("can't be blank")
+    end
+
+    scenario 'failing when group icon is absent' do
       create_user
       click_on 'Activity Groups', match: :first
       click_on 'Create a New Group'
       fill_in 'group_name', with: 'A Test Group Name'
       click_on 'Create Group'
 
-      # expect(current_path).to eq('/users/1/activities')
       expect(page).to have_content("can't be blank")
     end
 
-    # scenario 'successful with valid params' do
-    #   create_user
-    #   create_group
+    scenario 'successful with valid params' do
+      create_user
+      create_group
 
-    #   expect(current_path).to eq('/users/1')
-    #   expect(page).to have_content('New group created successfully!')
-    # end
+      expect(page).to have_content('New group created successfully!')
+    end
   end
 
   scenario 'showing the list of groups created by the user' do
@@ -33,7 +42,7 @@ feature 'user group management features', type: :feature do
     click_on 'Activity Groups', match: :first
     click_on 'Create a New Group'
     fill_in 'group_name', with: 'A Test Group Name'
-    fill_in 'grou_icon', with: attach_file('ok', File.absolute_path('./public/no_group.png'))
+    attach_file('group_icon', File.absolute_path('./public/no_group.png'))
     click_on 'Create Group'
   end
 
