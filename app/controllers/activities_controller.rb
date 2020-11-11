@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @groups = current_user.groups
   end
 
   def create
