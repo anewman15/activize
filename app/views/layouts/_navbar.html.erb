@@ -1,23 +1,8 @@
 <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand ml-4">
-    <%= link_to_home_page %>
-    <div class="navbar-item has-dropdown is-hoverable">
-      <div class="navbar-link">
-        Go to
-      </div>
-      <div class="navbar-dropdown is-left">
-        <div class="navbar-item">
-          <%= all_activities_link %>
-        </div>
-        <div class="navbar-item">
-          <%= ungrouped_activities_link %>
-        </div>
-        <div class="navbar-item">
-        <%= activity_groups_link %>
-        </div>
-      </div>
+    <div class="navbar-item">
+      <%= link_to_home_page %>
     </div>
-
     <a role="button" class="navbar-burger burger is-align-content-baseline" aria-label="menu" aria-expanded="false" data-target="activizeNavbar">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -33,6 +18,21 @@
     </div>
 
     <div class="navbar-end mr-4">
+      <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-link">
+        Go to
+      </div>
+      <div class="navbar-dropdown is-left">
+        <div class="navbar-item">
+          <%= all_activities_link %>
+        </div>
+        <div class="navbar-item">
+          <%= ungrouped_activities_link %>
+        </div>
+        <div class="navbar-item">
+        <%= activity_groups_link %>
+        </div>
+      </div>
       <div class="navbar-item">
         <%= login_button %>
         <%= logout_button %>
