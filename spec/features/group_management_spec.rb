@@ -54,19 +54,21 @@ feature 'user group management features', type: :feature do
     end
   end
 
-  scenario 'showing the list of groups created by the user' do
-    create_user
-    click_on 'Activity Groups', match: :first
+  feature 'showing a list of' do
+    scenario 'groups created by the user' do
+      create_user
+      click_on 'Activity Groups', match: :first
 
-    expect(page).to have_content('Create a New Group')
-  end
+      expect(page).to have_content('Create a New Group')
+    end
 
-  scenario 'showing the list of activities created by the user under a group' do
-    create_user
-    create_group
-    click_on 'A Test Group Name', match: :first
+    scenario 'activities created by the user under a group' do
+      create_user
+      create_group
+      click_on 'A Test Group Name', match: :first
 
-    expect(page).to have_content('All A Test Group Name Activities')
+      expect(page).to have_content('All A Test Group Name Activities')
+    end
   end
 
   def create_group
