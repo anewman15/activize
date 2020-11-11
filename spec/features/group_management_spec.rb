@@ -21,7 +21,7 @@ feature 'user group management features', type: :feature do
       attach_file('group_icon', File.absolute_path('./public/no_group.png'))
       click_on 'Create Group'
 
-      expect(page).to have_content("is too short (minimum is 3 characters)")
+      expect(page).to have_content('is too short (minimum is 3 characters)')
     end
 
     scenario 'failing when group name is more than 100 characters' do
@@ -32,7 +32,7 @@ feature 'user group management features', type: :feature do
       attach_file('group_icon', File.absolute_path('./public/no_group.png'))
       click_on 'Create Group'
 
-      expect(page).to have_content("is too long (maximum is 100 characters)")
+      expect(page).to have_content('is too long (maximum is 100 characters)')
     end
 
     scenario 'failing when group icon is absent' do

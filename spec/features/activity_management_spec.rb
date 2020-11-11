@@ -20,7 +20,7 @@ feature 'user activty management features', type: :feature do
       fill_in 'activity_amount', with: 15
       click_on 'Create Activity'
 
-      expect(page).to have_content("is too short (minimum is 3 characters)")
+      expect(page).to have_content('is too short (minimum is 3 characters)')
     end
 
     scenario 'failing with a name with more than 500 characters' do
@@ -37,7 +37,7 @@ feature 'user activty management features', type: :feature do
       fill_in 'activity_amount', with: 15
       click_on 'Create Activity'
 
-      expect(page).to have_content("is too long (maximum is 500 characters)")
+      expect(page).to have_content('is too long (maximum is 500 characters)')
     end
 
     scenario 'failing with an amount given' do
@@ -81,7 +81,6 @@ feature 'user activty management features', type: :feature do
     fill_in 'activity_amount', with: 100
     click_on 'Create Activity'
   end
-
 
   def create_group
     click_on 'Activity Groups', match: :first

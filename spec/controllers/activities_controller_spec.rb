@@ -52,7 +52,7 @@ RSpec.describe ActivitiesController, type: :controller do
           user = FactoryBot.create(:user)
           sign_in user
           group = FactoryBot.create(:group)
-          post :create, params: { user_id: user.id, activity: { name: "Some Test Activity Name", amount: 100, group_id: group.id } }
+          post :create, params: { user_id: user.id, activity: { name: 'Some Test Activity Name', amount: 100, group_id: group.id } }
           expect(response).to redirect_to(user_activities_path(user))
           expect(response).to have_http_status(302)
         end
