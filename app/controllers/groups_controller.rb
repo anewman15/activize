@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = current_user.find_group(params)
+    @group = Group.find(params[:id])
     group_activities
     @activities_duration_total = @group.activities_duration_total
   end
