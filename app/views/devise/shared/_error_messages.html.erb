@@ -1,8 +1,8 @@
 <div id="error_explanation">
   <h2>
     <%= I18n.t("errors.messages.not_saved",
-                count: errors_count(resource)
-                resource: resource_class(resource))
+                count: devise_errors_count(resource)
+                resource: devise_resource_class(resource))
       %>
   </h2>
   <ul>

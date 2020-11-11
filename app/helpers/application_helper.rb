@@ -52,26 +52,4 @@ module ApplicationHelper
       end
     end
   end
-
-  def errors_count(resource)
-    resource.errors.count if resource.errors.any?
-  end
-
-  def resource_class(resource)
-    resource.class.model_name.human.downcase if resource.errors.any?
-  end
-
-  def error_messages(resource)
-    resource.errors.full_messages.each do |message|
-      message.to_s
-    end
-  end
-
-  def remember_me_checkbox(form)
-    form.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  end
-
-  def minimum_chars_hint(minimum_password_length)
-    "#{minimum_password_length} characters minimum" if minimum_password_length
-  end
 end
