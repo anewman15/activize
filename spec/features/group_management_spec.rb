@@ -50,6 +50,7 @@ feature 'user group management features', type: :feature do
       create_group
 
       expect(page).to have_content('New group created successfully!')
+      expect(page).to have_content('A Test Group Name')
     end
   end
 
@@ -58,6 +59,14 @@ feature 'user group management features', type: :feature do
     click_on 'Activity Groups', match: :first
 
     expect(page).to have_content('Create a New Group')
+  end
+
+  scenario 'showing the list of activities created by the user under a group' do
+    create_user
+    create_group
+    click_on 'A Test Group Name', match: :first
+
+    expect(page).to have_content('All A Test Group Name Activities')
   end
 
   def create_group
