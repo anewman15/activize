@@ -4,7 +4,7 @@ feature 'user activty management features', type: :feature do
   feature 'creating an activity' do
     scenario 'failing with invalid params' do
       create_user
-      click_on 'All Activities'
+      click_on 'All Activities', match: :first
       click_on 'Create a New Activity'
       fill_in 'activity_name', with: 'A Test Activity Name'
       click_on 'Create Activity'
@@ -24,20 +24,20 @@ feature 'user activty management features', type: :feature do
 
   scenario 'showing the list of all activities created by the user' do
     create_user
-    click_on 'All Activities'
+    click_on 'All Activities', match: :first
 
     expect(page).to have_content('All Activities')
   end
 
   scenario 'showing the list of ungrouped activities created by the user' do
     create_user
-    click_on 'Ungrouped Activities'
+    click_on 'Ungrouped Activities', match: :first
 
     expect(page).to have_content('Your Ungrouped Activities')
   end
 
   def create_activity
-    click_on 'All Activities'
+    click_on 'All Activities', match: :first
     click_on 'Create a New Activity'
     fill_in 'activity_name', with: 'A Test Activity Name'
     fill_in 'activity_amount', with: 100
