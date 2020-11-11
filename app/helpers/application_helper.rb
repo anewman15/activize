@@ -1,4 +1,16 @@
 module ApplicationHelper
+  def all_activities_link
+    link_to 'All Activities', user_activities_path(current_user) if user_signed_in?
+  end
+
+  def ungrouped_activities_link
+    link_to 'Ungrouped Activities', users_path(current_user) if user_signed_in?
+  end
+
+  def activity_groups_link
+    link_to 'Activity Groups', user_groups_path(current_user) if user_signed_in?
+  end
+
   def home_page_links(current_user)
     link1 = link_to 'All Activities', user_activities_path(current_user), class: 'custom-link'
     link2 = link_to 'Ungrouped Activities', users_path, class: 'custom-link'
