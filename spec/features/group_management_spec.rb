@@ -13,6 +13,28 @@ feature 'user group management features', type: :feature do
       expect(page).to have_content("can't be blank")
     end
 
+    scenario 'failing when group name is less than 3 characters' do
+      create_user
+      click_on 'Activity Groups', match: :first
+      click_on 'Create a New Group'
+      fill_in 'group_name', with: 'Ab'
+      attach_file('group_icon', File.absolute_path('./public/no_group.png'))
+      click_on 'Create Group'
+
+      expect(page).to have_content("is too short (minimum is 3 characters)")
+    end
+
+    scenario 'failing when group name is more than 100 characters' do
+      create_user
+      click_on 'Activity Groups', match: :first
+      click_on 'Create a New Group'
+      fill_in 'group_name', with: 'Ali Babanin bir ciftligi var ciftligiginde kedileri var. Miyao Miyao diye bagirir. Ciftligiginde Ali Babanin'
+      attach_file('group_icon', File.absolute_path('./public/no_group.png'))
+      click_on 'Create Group'
+
+      expect(page).to have_content("is too long (maximum is 100 characters)")
+    end
+
     scenario 'failing when group icon is absent' do
       create_user
       click_on 'Activity Groups', match: :first

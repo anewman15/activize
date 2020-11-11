@@ -9,7 +9,6 @@ feature 'user activty management features', type: :feature do
       fill_in 'activity_name', with: 'A Test Activity Name'
       click_on 'Create Activity'
 
-      # expect(current_path).to eq('/users/1/activities')
       expect(page).to have_content("can't be blank")
     end
 
@@ -17,7 +16,6 @@ feature 'user activty management features', type: :feature do
       create_user
       create_activity
 
-      # expect(current_path).to eq('/users/1')
       expect(page).to have_content('New activity created successfully!')
     end
   end
