@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     @group = current_user.groups.build(group_params)
 
     if @group.save
-      render user_groups_path, notice: 'New group created successfully!'
+      redirect_to user_groups_path, notice: 'New group created successfully!'
     else
       render 'new'
     end
@@ -21,16 +21,16 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = current_user.find_group(params)
+    @group = Group.find(params[:id])
     group_activities
     @activities_duration_total = @group.activities_duration_total
   end
 
+  private
+
   def group_params
     params.require(:group).permit(:name, :icon)
   end
-
-  private
 
   def group_activities
     @group_activities = @group.activities.latest_first

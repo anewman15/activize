@@ -10,10 +10,6 @@ class User < ApplicationRecord
   has_many :activities, foreign_key: 'author_id'
   has_many :ungrouped_activities, -> { where group_id: nil }, class_name: 'Activity', foreign_key: 'author_id'
 
-  def find_group(params)
-    groups.find { |group| group if group.id == params[:id].to_i }
-  end
-
   def activities_duration_total
     amount_array = activities.map { |activity| activity.amount.to_i }
     amount_array.sum

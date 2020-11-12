@@ -25,7 +25,7 @@
         <div class="control">
           <%= f.input :password,
                       required: true,
-                      hint: (minimum_chars_hint(@minimum_password_length)),
+                      hint: (devise_minimum_chars_hint(@minimum_password_length)),
                       input_html: { class: "input" },
                       wrapper: false,
                       label_html: { class: "label"} %>
