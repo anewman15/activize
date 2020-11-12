@@ -1,6 +1,10 @@
 {
   "name": "activize",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.2.0",
+    "yarn": "1.22.5"
+  },
   "description": "This is an activity logger app that helps a user create daily activities and categorize them according to various categories they have in mind. They are able to name and create those groups according to their convenience.",
   "main": "index.js",
   "repository": "git@github.com:anewman15/activize.git",
