@@ -7,4 +7,5 @@ class Activity < ApplicationRecord
   belongs_to :group, optional: true
 
   scope :latest_first, -> { order(created_at: :desc) }
+  scope :with_group, -> { includes :group }
 end

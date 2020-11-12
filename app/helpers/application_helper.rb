@@ -1,4 +1,16 @@
 module ApplicationHelper
+  def all_activities_link
+    link_to 'All Activities', user_activities_path(current_user) if user_signed_in?
+  end
+
+  def ungrouped_activities_link
+    link_to 'Ungrouped Activities', users_path(current_user) if user_signed_in?
+  end
+
+  def activity_groups_link
+    link_to 'Activity Groups', user_groups_path(current_user) if user_signed_in?
+  end
+
   def home_page_links(current_user)
     link1 = link_to 'All Activities', user_activities_path(current_user), class: 'custom-link'
     link2 = link_to 'Ungrouped Activities', users_path, class: 'custom-link'
@@ -21,11 +33,23 @@ module ApplicationHelper
     end
   end
 
-  def remember_me_checkbox(form)
-    form.input :remember_me, as: :boolean if devise_mapping.rememberable?
+  def flash_notice(notice)
+    return unless flash[:notice]
+
+    content_tag :div, class: 'notification is-success global-notification' do
+      content_tag :p, class: 'notice' do
+        notice
+      end
+    end
   end
 
-  def minimum_chars_hint(minimum_password_length)
-    "#{minimum_password_length} characters minimum" if minimum_password_length
+  def flash_alert(alert)
+    return unless flash[:alert]
+
+    content_tag :div, class: 'notification is-warning global-notification' do
+      content_tag :p, class: 'alert' do
+        alert
+      end
+    end
   end
 end

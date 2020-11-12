@@ -12,5 +12,16 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to have_http_status(200)
       end
     end
+
+    context 'GET #index' do
+      it 'renders the user page' do
+        user = create(:user)
+        sign_in user
+        get :index
+
+        expect(response).to render_template('index')
+        expect(response).to have_http_status(200)
+      end
+    end
   end
 end

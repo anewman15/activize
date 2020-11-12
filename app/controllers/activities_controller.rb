@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @groups = current_user.groups
   end
 
   def create
@@ -19,7 +20,6 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
     activities
     @activities_duration_total = current_user.activities_duration_total
-    @groups = current_user.groups
   end
 
   private
@@ -29,6 +29,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activities
-    @activities = current_user.activities.latest_first
+    @activities = current_user.activities.with_group.latest_first
   end
 end

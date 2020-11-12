@@ -2,38 +2,80 @@ require 'rails_helper'
 
 feature 'user group management features', type: :feature do
   feature 'creating group' do
-    scenario 'failing with invalid params' do
+    scenario 'failing when group name is absent' do
       create_user
-      click_on 'Activity Groups'
+      click_on 'Activity Groups', match: :first
+      click_on 'Create a New Group'
+      fill_in 'group_name', with: ''
+      attach_file('group_icon', File.absolute_path('./public/no_group.png'))
+      click_on 'Create Group'
+
+      expect(page).to have_content("can't be blank")
+    end
+
+    scenario 'failing when group name is less than 3 characters' do
+      create_user
+      click_on 'Activity Groups', match: :first
+      click_on 'Create a New Group'
+      fill_in 'group_name', with: 'Ab'
+      attach_file('group_icon', File.absolute_path('./public/no_group.png'))
+      click_on 'Create Group'
+
+      expect(page).to have_content('is too short (minimum is 3 characters)')
+    end
+
+    scenario 'failing when group name is more than 100 characters' do
+      create_user
+      click_on 'Activity Groups', match: :first
+      click_on 'Create a New Group'
+      fill_in 'group_name', with: 'Ali Babanin bir ciftligi var ciftligiginde kedileri var. Miyao Miyao diye bagirir. Ciftligiginde Ali Babanin'
+      attach_file('group_icon', File.absolute_path('./public/no_group.png'))
+      click_on 'Create Group'
+
+      expect(page).to have_content('is too long (maximum is 100 characters)')
+    end
+
+    scenario 'failing when group icon is absent' do
+      create_user
+      click_on 'Activity Groups', match: :first
       click_on 'Create a New Group'
       fill_in 'group_name', with: 'A Test Group Name'
       click_on 'Create Group'
 
-      # expect(current_path).to eq('/users/1/activities')
       expect(page).to have_content("can't be blank")
     end
 
-    # scenario 'successful with valid params' do
-    #   create_user
-    #   create_group
+    scenario 'successful with valid params' do
+      create_user
+      create_group
 
-    #   expect(current_path).to eq('/users/1')
-    #   expect(page).to have_content('New group created successfully!')
-    # end
+      expect(page).to have_content('New group created successfully!')
+      expect(page).to have_content('A Test Group Name')
+    end
   end
 
-  scenario 'showing the list of groups created by the user' do
-    create_user
-    click_on 'Activity Groups'
+  feature 'showing a list of' do
+    scenario 'groups created by the user' do
+      create_user
+      click_on 'Activity Groups', match: :first
 
-    expect(page).to have_content('Create a New Group')
+      expect(page).to have_content('Create a New Group')
+    end
+
+    scenario 'activities created by the user under a group' do
+      create_user
+      create_group
+      click_on 'A Test Group Name', match: :first
+
+      expect(page).to have_content('All A Test Group Name Activities')
+    end
   end
 
   def create_group
-    click_on 'Activity Groups'
+    click_on 'Activity Groups', match: :first
     click_on 'Create a New Group'
     fill_in 'group_name', with: 'A Test Group Name'
-    fill_in 'grou_icon', with: attach_file('ok', File.absolute_path('./public/no_group.png'))
+    attach_file('group_icon', File.absolute_path('./public/no_group.png'))
     click_on 'Create Group'
   end
 
