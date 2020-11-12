@@ -1,12 +1,19 @@
 {
   "name": "activize",
+  "description": "This is an activity logger app that helps a user create daily activities and categorize them according to various categories they have in mind. They are able to name and create those groups according to their convenience.",
+  "main": "index.js",
   "version": "1.0.0",
   "engines": {
     "node": "15.2.0",
     "yarn": "1.22.5"
   },
-  "description": "This is an activity logger app that helps a user create daily activities and categorize them according to various categories they have in mind. They are able to name and create those groups according to their convenience.",
-  "main": "index.js",
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.3.0",
+    "turbolinks": "^5.2.0"
+  },
   "repository": "git@github.com:anewman15/activize.git",
   "author": "Abdullah Numan <anewman15@hotmail.com>",
   "license": "UNLICENSED"
