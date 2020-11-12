@@ -13,6 +13,6 @@ class UsersController < ApplicationController
   private
 
   def ungrouped_activities
-    @ungrouped_activities = current_user.ungrouped_activities.latest_first
+    @ungrouped_activities = current_user.ungrouped_activities.with_group.latest_first
   end
 end

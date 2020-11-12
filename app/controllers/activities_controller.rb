@@ -29,6 +29,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activities
-    @activities = current_user.activities.latest_first
+    @activities = current_user.activities.with_group.latest_first
   end
 end
