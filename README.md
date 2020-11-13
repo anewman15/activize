@@ -22,7 +22,7 @@ This is an activity logger app that helps a user create daily activities and cat
 ![Entity Relational Diagram](./erd.png)
 
 ## Live Version
-Live on Heroku [here](https://murmuring-wave-07875.herokuapp.com/)
+Live on Heroku [here](https://fathomless-shore-76470.herokuapp.com/)
 
 ## Deployment
 
