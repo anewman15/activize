@@ -2,7 +2,7 @@
   "name": "random_practice",
   "private": true,
   "engines": {
-    "node": "15.2.0",
+    "node": "12.19.0",
     "yarn": "1.22.5"
   },
   "dependencies": {
