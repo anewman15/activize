@@ -1,6 +1,10 @@
 {
   "name": "random_practice",
   "private": true,
+  "engines": {
+    "node": "15.2.0",
+    "yarn": "1.22.5"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
