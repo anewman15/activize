@@ -8,10 +8,11 @@
     "@rails/webpacker": "4.3.0",
     "node-sass": "^4.14.1",
     "turbolinks": "^5.2.0",
-    "webpack": "^5.18.0"
+    "webpack": "^4.0.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
